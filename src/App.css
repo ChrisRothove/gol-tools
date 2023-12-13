@@ -1,0 +1,54 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  background: url("http://miami007.b1.jcink.com/uploads/miami007/sinnerBG.png");
+  color: #FFF;
+}
+.content-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: auto;
+}
+.content-horizontal hr {
+  width: 100%;
+}
+.listItem {
+  background-color: #9932cc9d;
+  padding: .5rem;
+  border-radius: 8px 0px 8px 0px;
+  border: 4px double gold;
+  text-align: left;
+}
+.list-basic {
+  font-weight: 600;
+}
+.random-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.random-item-button-block {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+.random-item-button-block button {
+  padding: .5rem;
+  border: 4px double white;
+  background-color: gray;
+  flex-grow: 1;
+}
+.right-button {
+  border-radius: 0px 16px 0px 0px;
+}
+.left-button {
+  border-radius: 16px 0px 0px 0px;
+}
+.page-title {
+  font-family: Orbitron, sans-serif;
+}
