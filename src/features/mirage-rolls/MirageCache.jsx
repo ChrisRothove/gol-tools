@@ -4,7 +4,7 @@ import { ListPageItem } from "../lists/ListPage";
 import { TIER_ONE_MIRAGE_REWARDS } from "../../lists/tierOneMirageRewards";
 import { TIER_TWO_MIRAGE_REWARDS } from "../../lists/tierTwoMirageRewards";
 import { TIER_THREE_MIRAGE_REWARDS } from "../../lists/tierThreeMirageRewards";
-import { MIRAGE_FIGHT_TICKETS } from "../../lists/MirageFightTickets";
+import { MIRAGE_FIGHT_TICKETS } from "../../lists/mirageFightTickets";
 
 export function MirageCache() {
   const navigate = useNavigate();
