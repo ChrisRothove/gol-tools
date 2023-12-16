@@ -1,4 +1,4 @@
-import { MIRAGE_FIGHT_TICKETS } from "./MirageFightTickets";
+import { MIRAGE_FIGHT_TICKETS } from "./mirageFightTickets";
 import { MATERIALS } from "./materials";
 import { MIRAGE_ACCESSORIES } from "./mirageAccessories";
 import { MIRAGE_SUMMONS } from "./mirageSummons";
