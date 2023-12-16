@@ -1,4 +1,5 @@
 import { STANDARD_CHAMPS } from "../../lists/cards/standard-chaps";
+import { publicDevUrl } from "../../utils/publicDevUrl";
 
 export function CardList({ size = "lg" }) {
   return (
@@ -10,7 +11,7 @@ export function CardList({ size = "lg" }) {
             className={`card-container-${size}`}
             key={card.name}
             style={{
-              backgroundImage: `url(${card.pic})`,
+              backgroundImage: `url(${publicDevUrl(card.pic)})`,
             }}
           >
             <div className={`card-border card-border-${card.atr}`}></div>
