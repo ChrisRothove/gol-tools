@@ -3,12 +3,34 @@ import lists from "../../../lists";
 import { getRandWithRange } from "../../../utils/getRandWithRange";
 import { getRand } from "../../../utils/getRand";
 import { MIRAGE_CACHE_SETTINGS } from "../constants/mirageCacheSettings";
+import { MIRAGE_CHALLENGES } from "../../../lists/mirageChallenges";
+import { MIRAGE_BOSS_CHALLENGES } from "../../../lists/mirageBossChallenges";
 
 const getRewardFromList = (list, minKey, maxKey) => {
   const mainReward = getRandWithRange(list, minKey, maxKey);
   if (!mainReward?.subTable) return mainReward;
   const subTable = lists[mainReward.subTable];
   return getRandWithRange(subTable.LIST);
+};
+
+const getChallengesFromList = (isBoss, isChallenge) => {
+  if (!isChallenge) return [];
+  const list = [
+    ...MIRAGE_CHALLENGES.LIST,
+    ...(isBoss ? MIRAGE_BOSS_CHALLENGES.LIST : []),
+  ];
+  const challengeList = [];
+  console.log(list);
+  while (challengeList.length < 5) {
+    const rand = getRand(list);
+    if (challengeList.includes(rand)) {
+      //do nothing
+    } else {
+      challengeList.push(rand);
+    }
+  }
+
+  return challengeList;
 };
 
 export const useMirageCacheRolls = (settings) => {
@@ -42,6 +64,7 @@ export const useMirageCacheRolls = (settings) => {
       tierTwoReward: getRewardFromList(tierTwoList.LIST, minKey, maxKey),
       tierThreeReward: getRewardFromList(tierThreeList.LIST, minKey, maxKey),
       fightTicket: getFightTicket(),
+      challenges: getChallengesFromList(isBossOdds, isChallenge),
     });
   return {
     rewards,

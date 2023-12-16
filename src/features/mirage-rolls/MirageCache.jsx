@@ -9,6 +9,7 @@ import { Chat, Save, Settings } from "@mui/icons-material";
 import { useSettings } from "../hooks/useSettings";
 import { Switch } from "@mui/material";
 import { MIRAGE_CACHE_SETTINGS } from "./constants/mirageCacheSettings";
+import { MIRAGE_CHALLENGES } from "../../lists/mirageChallenges";
 
 export function MirageCache() {
   const navigate = useNavigate();
@@ -91,6 +92,15 @@ export function MirageCache() {
             KEYS={MIRAGE_FIGHT_TICKETS.KEYS}
           />
         ) : null}
+
+        {rewards?.challenges.length > 0 && <h2>Style Challenges</h2>}
+        {rewards?.challenges.map((challenge) => (
+          <ListPageItem
+            key={challenge.name}
+            item={challenge}
+            KEYS={MIRAGE_CHALLENGES.KEYS}
+          />
+        ))}
       </div>
     </>
   );
