@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getRand } from "../utils/getRand";
 import { ListPageItem } from "./lists/ListPage";
+import { getRandWithRange } from "../utils/getRandWithRange";
 
 export const RandomSelector = ({ itemList, keys }) => {
   const [currentItem, setCurrentItem] = useState(getRand(itemList));
@@ -9,7 +10,7 @@ export const RandomSelector = ({ itemList, keys }) => {
 
   const onUpdateCurrent = () => {
     history.unshift(currentItem);
-    setCurrentItem(getRand(itemList));
+    setCurrentItem(getRandWithRange(itemList));
   };
 
   return (

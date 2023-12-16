@@ -1,5 +1,19 @@
+import { MIRAGE_FIGHT_TICKETS } from "./MirageFightTickets";
 import { MATERIALS } from "./materials";
+import { MIRAGE_ACCESSORIES } from "./mirageAccessories";
+import { MIRAGE_SUMMONS } from "./mirageSummons";
+import { MIRAGE_WEAPONS } from "./mirageWeapons";
+import { TIER_ONE_MIRAGE_REWARDS } from "./tierOneMirageRewards";
+import { TIER_THREE_MIRAGE_REWARDS } from "./tierThreeMirageRewards";
+import { TIER_TWO_MIRAGE_REWARDS } from "./tierTwoMirageRewards";
 
 export default {
   [MATERIALS.ROUTE]: MATERIALS,
+  [MIRAGE_WEAPONS.ROUTE]: MIRAGE_WEAPONS,
+  [MIRAGE_SUMMONS.ROUTE]: MIRAGE_SUMMONS,
+  [MIRAGE_ACCESSORIES.ROUTE]: MIRAGE_ACCESSORIES,
+  [MIRAGE_FIGHT_TICKETS.ROUTE]: MIRAGE_FIGHT_TICKETS,
+  [TIER_ONE_MIRAGE_REWARDS.ROUTE]: TIER_ONE_MIRAGE_REWARDS,
+  [TIER_TWO_MIRAGE_REWARDS.ROUTE]: TIER_TWO_MIRAGE_REWARDS,
+  [TIER_THREE_MIRAGE_REWARDS.ROUTE]: TIER_THREE_MIRAGE_REWARDS,
 };

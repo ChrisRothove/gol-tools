@@ -6,6 +6,8 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AllLists } from "./features/lists/AllLists.jsx";
 import { ListRouter } from "./features/lists/ListRouter.jsx";
+import { DmTools } from "./features/navigation/DmTools.jsx";
+import { MirageCache } from "./features/mirage-rolls/MirageCache.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/lists/:listKey",
     element: <ListRouter />,
+  },
+  {
+    path: "/dm-tools",
+    element: <DmTools />,
+  },
+  {
+    path: "/dm-tools/mirage-cache",
+    element: <MirageCache />,
   },
 ]);
 

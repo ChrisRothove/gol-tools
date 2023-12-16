@@ -13,21 +13,33 @@ const KEYS = [
 const LIST = [
   {
     name: "Blazing Shard",
+    min: 0,
+    max: 2,
   },
   {
     name: "Lightning Shard",
+    min: 3,
+    max: 4,
   },
   {
     name: "Freezing Shard",
+    min: 5,
+    max: 6,
   },
   {
     name: "Bright Shard",
+    min: 7,
+    max: 8,
+  },
+  {
+    name: "Dark Shard",
+    min: 9,
+    max: 10,
   },
   {
     name: "Weapon Material",
-  },
-  {
-    name: "Weapon Material",
+    min: 11,
+    max: 14,
   },
 ];
 
