@@ -1,0 +1,52 @@
+.card-container-lg {
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+.card-border {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-border-mag {
+  background-image: url("/src/assets/borders/champ_mag_border.png");
+}
+.card-border-pow {
+  background-image: url("/src/assets/borders/champ_pow_border.png");
+}
+.card-border-spd {
+  background-image: url("/src/assets/borders/champ_spd_border.png");
+}
+.card-border-acc {
+  background-image: url("/src/assets/borders/acc_border.png");
+}
+.card-cp {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 3rem;
+}
+.card-df {
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
+  font-size: 3rem;
+}
+.card-pw {
+  position: absolute;
+  bottom: 35px;
+  right: 70px;
+  font-size: 3rem;
+}
+.card-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}

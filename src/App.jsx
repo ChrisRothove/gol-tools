@@ -20,6 +20,7 @@ function App() {
       },
     ],
     subtext: "Dungeons and Darkness Version 3.3.2",
+    backButton: false,
   };
 
   return <BasePage {...pageDetails} />;

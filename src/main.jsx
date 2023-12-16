@@ -3,11 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import "./App.css";
+import "./styles/cardLists.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AllLists } from "./features/lists/AllLists.jsx";
 import { ListRouter } from "./features/lists/ListRouter.jsx";
 import { DmTools } from "./features/navigation/DmTools.jsx";
 import { MirageCache } from "./features/mirage-rolls/MirageCache.jsx";
+import { CardList } from "./features/tcg/CardList.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/dm-tools/mirage-cache",
     element: <MirageCache />,
+  },
+  {
+    path: "/mirage-masters",
+    element: <CardList />,
   },
 ]);
 
