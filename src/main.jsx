@@ -4,8 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AllLists } from "/src/features/lists/allLists.jsx";
-import { ListRouter } from "/src/features/lists/ListRouter.jsx";
+import { AllLists } from "./features/lists/allLists.jsx";
+import { ListRouter } from "./features/lists/ListRouter.jsx";
 
 const router = createBrowserRouter([
   {
