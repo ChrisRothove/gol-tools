@@ -60,3 +60,21 @@ body {
 .page-title {
   font-family: Orbitron, sans-serif;
 }
+.action-button-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 4px;
+}
+.action-button {
+  padding: 8px;
+  background-color: #9932cc9d;
+  color: black;
+  line-height: 0;
+}
+.settings-block {
+  text-align: left;
+}
+.hidden {
+  display: none;
+}
