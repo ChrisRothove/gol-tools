@@ -17,7 +17,7 @@ const LIST = [
     CP: 14,
     pow: 4,
     def: 12,
-    pic: "/public/assets/card-art/Aqua1.png",
+    pic: "/assets/card-art/Aqua1.png",
   },
   {
     name: "Master Terra",
