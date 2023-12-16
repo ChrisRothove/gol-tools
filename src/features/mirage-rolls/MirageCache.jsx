@@ -13,11 +13,12 @@ import { MIRAGE_CACHE_SETTINGS } from "./constants/mirageCacheSettings";
 export function MirageCache() {
   const navigate = useNavigate();
 
-  const { rewards, reRoll } = useMirageCacheRolls();
   const { settings, toggleSetting, isVisible, setVisibility } = useSettings([
     MIRAGE_CACHE_SETTINGS.USE_BOSS,
     MIRAGE_CACHE_SETTINGS.USE_CHALLENGES,
   ]);
+
+  const { rewards, reRoll } = useMirageCacheRolls(settings);
 
   return (
     <>
