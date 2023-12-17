@@ -5,6 +5,5 @@ import { ListPage } from "./ListPage";
 export function ListRouter() {
   const { listKey } = useParams();
 
-  console.log(ALL_LISTS);
   return <ListPage dataObject={ALL_LISTS[listKey]} />;
 }

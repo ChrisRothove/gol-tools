@@ -10,6 +10,7 @@ import { ListRouter } from "./features/lists/ListRouter.jsx";
 import { DmTools } from "./features/navigation/DmTools.jsx";
 import { MirageCache } from "./features/mirage-rolls/MirageCache.jsx";
 import { CardList } from "./features/tcg/CardList.jsx";
+import { CardListsDirectory } from "./features/tcg/CardListsDirectory.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/mirage-masters",
+    element: <CardListsDirectory />,
+  },
+  {
+    path: "/mirage-masters/:listKey",
     element: <CardList />,
   },
 ]);

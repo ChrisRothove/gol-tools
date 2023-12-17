@@ -14,6 +14,7 @@ const LIST = [
   {
     name: "Master Aqua",
     atr: "mag",
+    rare: false,
     CP: 14,
     pow: 4,
     def: 12,
@@ -22,6 +23,7 @@ const LIST = [
   {
     name: "Master Terra",
     atr: "pow",
+    rare: false,
     CP: 12,
     pow: 6,
     def: 12,
@@ -30,6 +32,7 @@ const LIST = [
   {
     name: "Master Ventus",
     atr: "spd",
+    rare: false,
     CP: 16,
     pow: 4,
     def: 10,
@@ -38,6 +41,7 @@ const LIST = [
   {
     name: "Mickey Mouse",
     atr: "spd",
+    rare: false,
     CP: 15,
     pow: 3,
     def: 12,
@@ -46,6 +50,7 @@ const LIST = [
   {
     name: "Goofy Goof",
     atr: "pow",
+    rare: false,
     CP: 10,
     pow: 5,
     def: 15,
@@ -54,6 +59,7 @@ const LIST = [
   {
     name: "Donald Duck",
     atr: "mag",
+    rare: false,
     CP: 16,
     pow: 6,
     def: 8,
@@ -62,6 +68,7 @@ const LIST = [
   {
     name: "Master Riku",
     atr: "pow",
+    rare: false,
     CP: 11,
     pow: 5,
     def: 14,
@@ -70,6 +77,7 @@ const LIST = [
   {
     name: "Master Kairi",
     atr: "mag",
+    rare: false,
     CP: 12,
     pow: 4,
     def: 14,
@@ -78,6 +86,7 @@ const LIST = [
   {
     name: "Memory of Sora",
     atr: "spd",
+    rare: false,
     CP: 18,
     pow: 3,
     def: 9,

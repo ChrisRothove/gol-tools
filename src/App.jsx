@@ -18,6 +18,10 @@ function App() {
         label: "Player Tools",
         onClickFn: () => navigate("/player-tools"),
       },
+      {
+        label: "Mirage Masters",
+        onClickFn: () => navigate("/mirage-masters"),
+      },
     ],
     subtext: "Dungeons and Darkness Version 3.3.2",
     backButton: false,

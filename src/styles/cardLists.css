@@ -1,9 +1,24 @@
+/* CARD CONTAINER */
 .card-container-lg {
   background-size: cover;
   width: 300px;
   height: 300px;
   position: relative;
 }
+.card-container-md {
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.card-container-sm {
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+/* BORDERS */
 .card-border {
   background-size: cover;
   width: 100%;
@@ -13,35 +28,114 @@
   left: 0;
 }
 .card-border-mag {
-  background-image: url("/src/assets/borders/champ_mag_border.png");
+  background-image: url("/public/assets/borders/champ_mag_border.png");
 }
 .card-border-pow {
-  background-image: url("/src/assets/borders/champ_pow_border.png");
+  background-image: url("/public/assets/borders/champ_pow_border.png");
 }
 .card-border-spd {
-  background-image: url("/src/assets/borders/champ_spd_border.png");
+  background-image: url("/public/assets/borders/champ_spd_border.png");
 }
 .card-border-acc {
-  background-image: url("/src/assets/borders/acc_border.png");
+  background-image: url("/public/assets/borders/acc_border.png");
 }
-.card-cp {
+.card-border-com-mag {
+  background-image: url("/public/assets/borders/com_mag_border.png");
+}
+.card-border-com-pow {
+  background-image: url("/public/assets/borders/com_pow_border.png");
+}
+.card-border-com-spd {
+  background-image: url("/public/assets/borders/com_spd_border.png");
+}
+
+/* CARD CP */
+.card-cp-lg {
   position: absolute;
   top: 10px;
   left: 20px;
   font-size: 3rem;
+  text-align: center;
+  min-width: 60px;
 }
-.card-df {
+.card-cp-md {
+  position: absolute;
+  top: 7px;
+  left: 14px;
+  font-size: 2rem;
+  text-align: center;
+  min-width: 40px;
+}
+.card-cp-sm {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  font-size: 1rem;
+  text-align: center;
+  min-width: 20px;
+}
+
+/* CARD DF */
+.card-df-lg {
   position: absolute;
   bottom: -5px;
   right: 10px;
   font-size: 3rem;
 }
-.card-pw {
+.card-df-md {
+  position: absolute;
+  bottom: -4px;
+  right: 7px;
+  font-size: 2rem;
+}
+.card-df-sm {
+  position: absolute;
+  bottom: -2px;
+  right: 3px;
+  font-size: 1rem;
+}
+
+/* CARD PW */
+.card-pw-lg {
   position: absolute;
   bottom: 35px;
   right: 70px;
   font-size: 3rem;
 }
+.card-pw-md {
+  position: absolute;
+  bottom: 28px;
+  right: 45px;
+  font-size: 2rem;
+}
+.card-pw-sm {
+  position: absolute;
+  bottom: 14px;
+  right: 20px;
+  font-size: 1rem;
+}
+
+/* CARD VAL */
+.card-val-lg {
+  position: absolute;
+  bottom: 15px;
+  right: 40px;
+  font-size: 3rem;
+}
+.card-val-md {
+  position: absolute;
+  bottom: 8px;
+  right: 28px;
+  font-size: 2rem;
+}
+.card-val-sm {
+  position: absolute;
+  bottom: 4px;
+  right: 14px;
+  font-size: 1rem;
+}
+
+
 .card-view {
   display: flex;
   flex-direction: row;
@@ -49,4 +143,85 @@
   justify-content: center;
   align-items: center;
   gap: 6px;
+}
+
+/* CARD MARKER */
+.card-marker-lg {
+  width: 91px;
+  height: 79px;
+  background-size: cover;
+  position: absolute;
+  bottom: 75px;
+  right: -5px;
+}
+.card-marker-md {
+  width: 65px;
+  height: 56.5px;
+  background-size: cover;
+  position: absolute;
+  bottom: 50px;
+  right: -5px;
+}
+.card-marker-sm {
+  width: 32.5px;
+  height: 28.25px;
+  background-size: cover;
+  position: absolute;
+  bottom: 25px;
+  right: -2px;
+}
+
+/* CHAMP MARKER */
+.champ-marker-lg {
+  width: 91px;
+  height: 79px;
+  background-size: cover;
+  position: absolute;
+  bottom: 95px;
+  right: -5px;
+}
+.champ-marker-md {
+  width: 65px;
+  height: 56.5px;
+  background-size: cover;
+  position: absolute;
+  bottom: 65px;
+  right: -5px;
+}
+.champ-marker-sm {
+  width: 32.5px;
+  height: 28.25px;
+  background-size: cover;
+  position: absolute;
+  bottom: 32px;
+  right: -2px;
+}
+
+/* CHAMP MARKER */
+.card-rarity-lg {
+  width: 65px;
+  height: 56.5px;
+  background-size: cover;
+  background-image: url("/public/assets/markers/rare.png");
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.card-rarity-md {
+  width: 32.5px;
+  height: 28.25px;
+  background-size: cover;
+  background-image: url("/public/assets/markers/rare.png");
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.card-rarity-sm {
+  width: 23.4px;
+  height: 20.34px;
+  background-size: cover;
+  background-image: url("/public/assets/markers/rare.png");
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
