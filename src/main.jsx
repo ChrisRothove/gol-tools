@@ -9,8 +9,10 @@ import { AllLists } from "./features/lists/AllLists.jsx";
 import { ListRouter } from "./features/lists/ListRouter.jsx";
 import { DmTools } from "./features/navigation/DmTools.jsx";
 import { MirageCache } from "./features/mirage-rolls/MirageCache.jsx";
-import { CardList } from "./features/tcg/CardList.jsx";
 import { CardListsDirectory } from "./features/tcg/CardListsDirectory.jsx";
+import { CardListPage } from "./features/tcg/CardListPage.jsx";
+import { TcgTools } from "./features/navigation/TcgTools.jsx";
+import { MyCollections } from "./features/tcg/MyCollections.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,11 +37,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/mirage-masters",
+    element: <TcgTools />,
+  },
+  {
+    path: "/mirage-masters/lists",
     element: <CardListsDirectory />,
   },
   {
-    path: "/mirage-masters/:listKey",
-    element: <CardList />,
+    path: "/mirage-masters/lists/:listKey",
+    element: <CardListPage />,
+  },
+  {
+    path: "/mirage-masters/collection",
+    element: <MyCollections />,
   },
 ]);
 

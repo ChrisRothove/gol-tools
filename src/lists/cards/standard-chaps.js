@@ -12,6 +12,7 @@ const KEYS = [
 
 const LIST = [
   {
+    id: "champ1",
     name: "Master Aqua",
     atr: "mag",
     rare: false,
@@ -21,6 +22,7 @@ const LIST = [
     pic: "/assets/card-art/Aqua1.png",
   },
   {
+    id: "champ2",
     name: "Master Terra",
     atr: "pow",
     rare: false,
@@ -30,6 +32,7 @@ const LIST = [
     pic: "/assets/card-art/Terra1.png",
   },
   {
+    id: "champ3",
     name: "Master Ventus",
     atr: "spd",
     rare: false,
@@ -39,6 +42,7 @@ const LIST = [
     pic: "/assets/card-art/Ventus1.png",
   },
   {
+    id: "champ4",
     name: "Mickey Mouse",
     atr: "spd",
     rare: false,
@@ -48,6 +52,7 @@ const LIST = [
     pic: "/assets/card-art/Mickey1.png",
   },
   {
+    id: "champ5",
     name: "Goofy Goof",
     atr: "pow",
     rare: false,
@@ -57,6 +62,7 @@ const LIST = [
     pic: "/assets/card-art/Goofy1.png",
   },
   {
+    id: "champ6",
     name: "Donald Duck",
     atr: "mag",
     rare: false,
@@ -66,6 +72,7 @@ const LIST = [
     pic: "/assets/card-art/Donald1.png",
   },
   {
+    id: "champ7",
     name: "Master Riku",
     atr: "pow",
     rare: false,
@@ -75,6 +82,7 @@ const LIST = [
     pic: "/assets/card-art/Riku1.png",
   },
   {
+    id: "champ8",
     name: "Master Kairi",
     atr: "mag",
     rare: false,
@@ -84,6 +92,7 @@ const LIST = [
     pic: "/assets/card-art/Kairi1.png",
   },
   {
+    id: "champ9",
     name: "Memory of Sora",
     atr: "spd",
     rare: false,

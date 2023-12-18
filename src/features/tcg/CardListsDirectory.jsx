@@ -8,15 +8,15 @@ export function CardListsDirectory() {
     buttonList: [
       {
         label: "Champions",
-        onClickFn: () => navigate("/mirage-masters/standard-champs"),
+        onClickFn: () => navigate("/mirage-masters/lists/standard-champs"),
       },
       {
         label: "Accessories",
-        onClickFn: () => navigate("/mirage-masters/standard-accessories"),
+        onClickFn: () => navigate("/mirage-masters/lists/standard-accessories"),
       },
       {
         label: "Commands",
-        onClickFn: () => navigate("/mirage-masters/standard-coms"),
+        onClickFn: () => navigate("/mirage-masters/lists/standard-coms"),
       },
     ],
   };

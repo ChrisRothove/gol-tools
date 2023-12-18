@@ -15,7 +15,7 @@ function App() {
         onClickFn: () => navigate("/dm-tools"),
       },
       {
-        label: "Player Tools",
+        label: "⚒️ Player Tools",
         onClickFn: () => navigate("/player-tools"),
       },
       {

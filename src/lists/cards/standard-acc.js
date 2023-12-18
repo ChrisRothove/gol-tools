@@ -12,10 +12,11 @@ const KEYS = [
 
 const LIST = [
   {
+    id: "acc1",
     name: "Protect Ring",
     atr: "acc",
-    mark: "piercing",
-    rare: true,
+    mark: null,
+    rare: false,
     CP: 3,
     pow: 0,
     def: 5,
