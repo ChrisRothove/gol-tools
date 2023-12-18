@@ -8,6 +8,10 @@ export function TcgTools() {
     title: "Mirage Masters",
     buttonList: [
       {
+        label: "⚒️ Rules",
+        onClickFn: () => navigate("/mirage-masters/rules"),
+      },
+      {
         label: "Card Lists",
         onClickFn: () => navigate("/mirage-masters/lists"),
       },

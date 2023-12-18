@@ -13,11 +13,13 @@ import { CardListsDirectory } from "./features/tcg/CardListsDirectory.jsx";
 import { CardListPage } from "./features/tcg/CardListPage.jsx";
 import { TcgTools } from "./features/navigation/TcgTools.jsx";
 import { MyCollections } from "./features/tcg/MyCollections.jsx";
+import { NotFound } from "./features/navigation/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <NotFound />,
   },
   {
     path: "/lists",
