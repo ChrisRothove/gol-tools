@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import lists from "../../lists/cards";
 import { CardList } from "./CardList";
 import { NavWithActions } from "../navigation/navWithActions";
-import { useCardSize } from "../hooks/useCardSize";
+import { useCardSize } from "../hooks/useCardSize.jsx";
 
 export function CardListPage() {
   const { listKey } = useParams();

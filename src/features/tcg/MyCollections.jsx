@@ -5,7 +5,7 @@ import { STANDARD_CHAMPS } from "../../lists/cards/standard-chaps";
 import { STANDARD_COMS } from "../../lists/cards/standard-coms";
 import { STANDARD_ACCESSORIES } from "../../lists/cards/standard-acc";
 import { getFullCardDetails } from "../../utils/getFullCardDetails";
-import { useCardSize } from "../hooks/useCardSize";
+import { useCardSize } from "../hooks/useCardSize.jsx";
 
 export function MyCollections() {
   const lsCollection = localStorage.getItem("collection");
