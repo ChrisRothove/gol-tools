@@ -1,16 +1,11 @@
 import { STARTER_COLLECTION } from "./constants/STARTER_COLLECTION";
-import { useState } from "react";
-import {
-  PhotoSizeSelectActual,
-  PhotoSizeSelectLarge,
-  PhotoSizeSelectSmall,
-} from "@mui/icons-material";
 import { NavWithActions } from "../navigation/navWithActions";
 import { CardList } from "./CardList";
 import { STANDARD_CHAMPS } from "../../lists/cards/standard-chaps";
 import { STANDARD_COMS } from "../../lists/cards/standard-coms";
 import { STANDARD_ACCESSORIES } from "../../lists/cards/standard-acc";
 import { getFullCardDetails } from "../../utils/getFullCardDetails";
+import { useCardSize } from "../hooks/useCardSize";
 
 export function MyCollections() {
   const lsCollection = localStorage.getItem("collection");
@@ -25,21 +20,10 @@ export function MyCollections() {
 
   const myCollection = getFullCardDetails(collectionList);
 
-  const [size, setSize] = useState("sm");
-  const actions = [
-    {
-      icon: <PhotoSizeSelectActual />,
-      onClickFn: () => setSize("lg"),
-    },
-    {
-      icon: <PhotoSizeSelectLarge />,
-      onClickFn: () => setSize("md"),
-    },
-    {
-      icon: <PhotoSizeSelectSmall />,
-      onClickFn: () => setSize("sm"),
-    },
-  ];
+  const { size, actions: sizeActions } = useCardSize();
+
+  const actions = sizeActions; // will spread in other actions
+  // TODO: add actions for filtering by card type + details view
 
   return (
     <>
