@@ -14,6 +14,8 @@ import { CardListPage } from "./features/tcg/CardListPage.jsx";
 import { TcgTools } from "./features/navigation/TcgTools.jsx";
 import { MyCollections } from "./features/tcg/MyCollections.jsx";
 import { NotFound } from "./features/navigation/NotFound.jsx";
+import { MyDecks } from "./features/tcg/MyDecks.jsx";
+import { DeckEditor } from "./features/tcg/DeckEditor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -53,10 +55,20 @@ const router = createBrowserRouter([
     path: "/mirage-masters/collection",
     element: <MyCollections />,
   },
+  {
+    path: "/mirage-masters/decks",
+    element: <MyDecks />,
+  },
+  {
+    path: "/mirage-masters/decks/new-deck",
+    element: <DeckEditor />,
+  },
+  {
+    path: "/mirage-masters/decks/:deckId",
+    element: <DeckEditor />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );

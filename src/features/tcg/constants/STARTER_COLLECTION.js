@@ -1,6 +1,6 @@
 export const STARTER_COLLECTION = {
   champions: [
-    { id: "champ1", count: 1 },
+    { id: "champ1", count: 3 },
     { id: "champ2", count: 1 },
     { id: "champ3", count: 1 },
     { id: "champ4", count: 1 },

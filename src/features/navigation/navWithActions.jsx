@@ -1,17 +1,9 @@
-import { useNavigate } from "react-router";
+import { NavNoActions } from "./navNoActions";
 
 export function NavWithActions({ actions = [] }) {
-  const navigate = useNavigate();
   return (
     <div className="content-horizontal">
-      <div className="random-item-button-block">
-        <button className="left-button" onClick={() => navigate(-1)}>
-          Back
-        </button>
-        <button className="right-button" onClick={() => navigate("/")}>
-          Home
-        </button>
-      </div>
+      <NavNoActions />
       <div className="action-button-bar">
         {actions.map((action, index) => (
           <button

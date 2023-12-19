@@ -4,7 +4,7 @@ import { publicDevUrl } from "../../utils/publicDevUrl";
 import { MARKER_IMAGES } from "./constants/MARKER_IMAGES";
 import { STANDARD_ACCESSORIES } from "../../lists/cards/standard-acc";
 
-export function ChampCard({ card, size }) {
+export function ChampCard({ card, size, showCount = false }) {
   return (
     <div
       className={`card-container-${size}`}
@@ -25,6 +25,9 @@ export function ChampCard({ card, size }) {
         />
       )}
       {card.rare && <div className={`card-rarity-${size}`} />}
+      {showCount && card.count > 1 && (
+        <div className={`card-count-${size}`}>x{card.count}</div>
+      )}
     </div>
   );
 }

@@ -79,3 +79,17 @@ body {
 .hidden {
   display: none;
 }
+.btn-empty {
+  border: 2px dashed #FFF;
+  background-color: transparent;
+  color: #FFF;
+}
+
+.MuiDrawer-modal {
+  background-color: #9932cc9d;
+}
+
+.MuiDrawer-paper {
+  background-image: url("/public/assets/sinnerBG.png");
+  width: 80vw;
+}

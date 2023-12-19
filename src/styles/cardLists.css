@@ -4,18 +4,21 @@
   width: 300px;
   height: 300px;
   position: relative;
+  color: white;
 }
 .card-container-md {
   background-size: cover;
   width: 200px;
   height: 200px;
   position: relative;
+  color: white;
 }
 .card-container-sm {
   background-size: cover;
   width: 100px;
   height: 100px;
   position: relative;
+  color: white;
 }
 
 /* BORDERS */
@@ -144,6 +147,9 @@
   align-items: center;
   gap: 6px;
 }
+.card-view hr {
+  width: 80%;
+}
 
 /* CARD MARKER */
 .card-marker-lg {
@@ -197,7 +203,7 @@
   right: -2px;
 }
 
-/* CHAMP MARKER */
+/* RARE MARKER */
 .card-rarity-lg {
   width: 65px;
   height: 56.5px;
@@ -224,4 +230,70 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
+}
+
+/* PRICE */
+/* CHAMP MARKER */
+.card-count-lg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.card-count-md {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.card-count-sm {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* EDITOR */
+.deck-name-input-block {
+  margin: 8px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
+}
+
+.deck-name-input {
+  background-color: #9932cc9d;
+  border: 1px solid #fff;
+  color: #fff;
+  flex-grow: 1;
+  padding: .5rem;
+}
+
+.deck-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px;
+}
+
+.card-slot {
+  overflow: hidden;
+  background-color: transparent;
+  border: 2px solid gold;
+  padding: 0;
+  width: 104px;
+  height: 104px;
+  font-size: 2rem;
+}
+
+.card-slot-empty {
+  border: 2px dashed white;
+  color: white;
+}
+
+.editor-section-header {
+  margin-bottom: 0px;
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1rem;
 }
