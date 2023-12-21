@@ -291,9 +291,99 @@
   color: white;
 }
 
+.disabled-slot {
+  opacity: 50%;
+}
+
 .editor-section-header {
   margin-bottom: 0px;
   flex-grow: 1;
   text-align: left;
   font-size: 1rem;
+}
+
+/* Command List */
+.command-set-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
+  width: 266px;
+  color: white;
+}
+
+.command-set-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.command-set-details h3 {
+  margin: 0;
+  font-size: .9rem;
+
+}
+
+.command-set-values {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.command-set-value {
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  font-family: Orbitron, sans-serif;
+  color: gray;
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.command-set-value-owned {
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  font-family: Orbitron, sans-serif;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.command-set-selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: .8rem;
+}
+
+/* Command Preview */
+.com-preview-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: start;
+  flex-grow: 1;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.com-preview-card {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  position: relative;
+  color: white;
+}
+
+.com-preview-value {
+  position: absolute;
+  right: 2px;
+  bottom: 0px;
+  background-color: black;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  text-align: center;
+  font-size: .8rem;
 }

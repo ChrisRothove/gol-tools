@@ -10,19 +10,35 @@ import StyleIcon from "@mui/icons-material/Style";
 import { useDeckEditor } from "../hooks/useDeckEditor";
 import { useCardListDrawer } from "../hooks/useCardListDrawer";
 import { Drawer } from "@mui/material";
+import { CommandSetList } from "./list-items/CommandSetList";
+import { CommandPreviewBlock } from "./list-items/CommandPreviewBlock";
 
-const EditorChampCard = ({ card, onClickFn = () => {}, listKey = "champ" }) => (
+export const EditorChampCard = ({
+  card,
+  onClickFn = () => {},
+  listKey = "champ",
+  disabled = false,
+}) => (
   <button
-    className={`card-slot ${card ? "" : "card-slot-empty"}`}
+    className={`card-slot ${card ? "" : "card-slot-empty"} ${
+      disabled ? "disabled-slot" : ""
+    }`}
     onClick={(e) => onClickFn(listKey, card, e)}
+    disabled={disabled}
   >
     {card ? <ChampCard card={card} size={"sm"} showCount /> : "+"}
   </button>
 );
 
-const EditorComCard = ({ card, onClickFn = () => {} }) => (
+export const EditorComCard = ({
+  card,
+  onClickFn = () => {},
+  disabled = false,
+}) => (
   <button
-    className={`card-slot ${card ? "" : "card-slot-empty"}`}
+    className={`card-slot ${card ? "" : "card-slot-empty"} ${
+      disabled ? "disabled-slot" : ""
+    }`}
     onClick={(e) => onClickFn("com", card, e)}
   >
     {card ? <ComCard card={card} size={"sm"} showCount /> : "+"}
@@ -99,14 +115,17 @@ export function DeckEditor() {
         <EditorChampCard
           card={deck.accessories?.[0]}
           onClickFn={onButtonClick}
+          listKey="acc"
         />
         <EditorChampCard
           card={deck.accessories?.[1]}
           onClickFn={onButtonClick}
+          listKey="acc"
         />
         <EditorChampCard
           card={deck.accessories?.[2]}
           onClickFn={onButtonClick}
+          listKey="acc"
         />
       </div>
 
@@ -130,13 +149,13 @@ export function DeckEditor() {
           {cardType === "champ" && (
             <ChampCardBlock deck={deck} onButtonClick={() => {}} />
           )}
+          {cardType === "com" && <CommandPreviewBlock deck={deck} />}
           <hr />
           {cardType === "com" ? (
-            <>
-              {optionsFromCollection.map((card) => (
-                <EditorComCard key={card.id} card={card} />
-              ))}
-            </>
+            <CommandSetList
+              cards={optionsFromCollection}
+              onClickFn={tryAddToDeck}
+            />
           ) : (
             <>
               {optionsFromCollection.map((card) => (

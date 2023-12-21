@@ -36,7 +36,7 @@ export const useDeckEditor = (deckId) => {
       total += acc.CP;
     });
     deck.commands.forEach((com) => {
-      total += com.value;
+      total += com.val;
     });
 
     return total;
