@@ -77,6 +77,40 @@ export const useDeckEditor = (deckId) => {
     return !(isOverCost || isTooMany || maxCapacity);
   };
 
+  const tryDeleteFromDeck = (listKey, card, e = {}) => {
+    e.preventDefault();
+    switch (listKey) {
+      case "com":
+        setDeck((prev) => {
+          const duplicates = deck.commands.filter(
+            (com) => com.val === card.val && com.id === card.id
+          );
+          const idx = deck.commands.indexOf(duplicates?.[0]);
+
+          if (idx < 0) return prev;
+          prev.commands.splice(idx, 1);
+          return { ...prev };
+        });
+        break;
+      case "champ":
+        setDeck((prev) => {
+          const newChamps = prev.champions.filter(
+            (champ) => champ.id !== card.id
+          );
+          return { ...prev, champions: newChamps };
+        });
+        break;
+      case "acc":
+        setDeck((prev) => {
+          const newAcc = prev.accessories.filter((acc) => acc.id !== card.id);
+          return { ...prev, accessories: newAcc };
+        });
+        break;
+      default:
+        break;
+    }
+  };
+
   const tryAddToDeck = (listKey, card, e = {}) => {
     e.preventDefault();
     switch (listKey) {
@@ -119,6 +153,7 @@ export const useDeckEditor = (deckId) => {
     submitDeck,
     getTotalCP,
     tryAddToDeck,
+    tryDeleteFromDeck,
     getTotalCPUsed,
     rules: {
       validateChampCard,

@@ -1,12 +1,13 @@
 import { publicDevUrl } from "../../../utils/publicDevUrl";
 
-const CommandPreviewCard = ({ card }) => {
+const CommandPreviewCard = ({ card, onButtonClick }) => {
   return (
     <div
       className="com-preview-card"
       style={{
         backgroundImage: `url(${publicDevUrl(card.pic)})`,
       }}
+      onClick={(e) => onButtonClick("com", card, e)}
     >
       <div className="com-preview-value">{card.val}</div>
     </div>
@@ -27,27 +28,51 @@ export const CommandPreviewBlock = ({
     <div className="content-horizontal">
       <div className="com-preview-row">
         {row1Cards?.map((card) => {
-          return <CommandPreviewCard key={card.id + card.val} card={card} />;
+          return (
+            <CommandPreviewCard
+              key={card.id + card.val}
+              card={card}
+              onButtonClick={onButtonClick}
+            />
+          );
         })}
       </div>
       {row2Cards.length > 0 && (
         <div className="com-preview-row">
           {row2Cards?.map((card) => {
-            return <CommandPreviewCard key={card.id + card.val} card={card} />;
+            return (
+              <CommandPreviewCard
+                key={card.id + card.val}
+                card={card}
+                onButtonClick={onButtonClick}
+              />
+            );
           })}
         </div>
       )}
       {row3Cards.length > 0 && (
         <div className="com-preview-row">
           {row3Cards?.map((card) => {
-            return <CommandPreviewCard key={card.id + card.val} card={card} />;
+            return (
+              <CommandPreviewCard
+                key={card.id + card.val}
+                card={card}
+                onButtonClick={onButtonClick}
+              />
+            );
           })}
         </div>
       )}
       {row4Cards.length > 0 && (
         <div className="com-preview-row">
           {row4Cards?.map((card) => {
-            return <CommandPreviewCard key={card.id + card.val} card={card} />;
+            return (
+              <CommandPreviewCard
+                key={card.id + card.val}
+                card={card}
+                onButtonClick={onButtonClick}
+              />
+            );
           })}
         </div>
       )}

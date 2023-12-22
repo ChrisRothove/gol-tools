@@ -75,6 +75,7 @@ export function DeckEditor() {
     getTotalCPUsed,
     rules,
     tryAddToDeck,
+    tryDeleteFromDeck,
   } = useDeckEditor(deckId);
 
   const {
@@ -134,10 +135,20 @@ export function DeckEditor() {
       <Drawer anchor="right" open={isOpen} onClose={onClose}>
         <div className="card-view">
           {cardType === "champ" && (
-            <ChampCardBlock deck={deck} onButtonClick={() => {}} />
+            <ChampCardBlock deck={deck} onButtonClick={tryDeleteFromDeck} />
           )}
-          {cardType === "com" && <CommandPreviewBlock deck={deck} />}
-          {cardType === "acc" && <AccessoryPreviewBlock deck={deck} />}
+          {cardType === "com" && (
+            <CommandPreviewBlock
+              deck={deck}
+              onButtonClick={tryDeleteFromDeck}
+            />
+          )}
+          {cardType === "acc" && (
+            <AccessoryPreviewBlock
+              deck={deck}
+              onButtonClick={tryDeleteFromDeck}
+            />
+          )}
           <hr />
           {cardType === "com" ? (
             <CommandSetList
