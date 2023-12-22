@@ -2,7 +2,7 @@ import { useState } from "react";
 import { collapseCommandsByValue } from "../../../utils/collapseCommandsByValue";
 import { EditorComCard } from "../DeckEditor";
 
-const CommandSet = ({ commandSet = {}, onClickFn }) => {
+const CommandSet = ({ commandSet = {}, onClickFn, rules }) => {
   const [currentValue, setCurrentValue] = useState(0);
   const cardToShow = {
     ...commandSet.baseCard,
@@ -21,7 +21,7 @@ const CommandSet = ({ commandSet = {}, onClickFn }) => {
       <EditorComCard
         card={cardToShow}
         onClickFn={onClickFn}
-        disabled={isCardDisabled}
+        disabled={isCardDisabled || !rules.validateComCard(cardToShow)}
       />
       <div className="command-set-details">
         <h3>{commandSet.name}</h3>
@@ -60,7 +60,7 @@ const CommandSet = ({ commandSet = {}, onClickFn }) => {
   );
 };
 
-export const CommandSetList = ({ cards = [], onClickFn }) => {
+export const CommandSetList = ({ cards = [], onClickFn, rules }) => {
   const commandSets = collapseCommandsByValue(cards);
   console.log(commandSets);
   const setKeys = Object.keys(commandSets);
@@ -72,6 +72,7 @@ export const CommandSetList = ({ cards = [], onClickFn }) => {
           key={key}
           commandSet={commandSets[key]}
           onClickFn={onClickFn}
+          rules={rules}
         />
       ))}
     </div>

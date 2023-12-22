@@ -12,6 +12,8 @@ import { useCardListDrawer } from "../hooks/useCardListDrawer";
 import { Drawer } from "@mui/material";
 import { CommandSetList } from "./list-items/CommandSetList";
 import { CommandPreviewBlock } from "./list-items/CommandPreviewBlock";
+import { AccessoryPreviewBlock } from "./list-items/AccessoryPreviewBlock";
+import { DeckStats } from "./list-items/DeckStats";
 
 export const EditorChampCard = ({
   card,
@@ -47,9 +49,18 @@ export const EditorComCard = ({
 
 const ChampCardBlock = ({ onButtonClick, deck = {} }) => (
   <div className="card-view">
-    <EditorChampCard card={deck.champions?.[0]} onClickFn={onButtonClick} />
-    <EditorChampCard card={deck.champions?.[1]} onClickFn={onButtonClick} />
-    <EditorChampCard card={deck.champions?.[2]} onClickFn={onButtonClick} />
+    <EditorChampCard
+      card={{ ...deck.champions?.[0], count: 1 }}
+      onClickFn={onButtonClick}
+    />
+    <EditorChampCard
+      card={{ ...deck.champions?.[1], count: 1 }}
+      onClickFn={onButtonClick}
+    />
+    <EditorChampCard
+      card={{ ...deck.champions?.[2], count: 1 }}
+      onClickFn={onButtonClick}
+    />
   </div>
 );
 
@@ -62,6 +73,7 @@ export function DeckEditor() {
     submitDeck,
     getTotalCP,
     getTotalCPUsed,
+    rules,
     tryAddToDeck,
   } = useDeckEditor(deckId);
 
@@ -88,20 +100,11 @@ export function DeckEditor() {
         />
         <button onClick={submitDeck}>Save Deck</button>
       </div>
-      <div className="deck-stats">
-        <div>
-          <StyleIcon /> {getTotalCPUsed()}/{getTotalCP()}
-        </div>
-        <div>
-          <PersonIcon /> {deck.champions?.length}
-        </div>
-        <div>
-          <DiamondIcon /> {deck.accessories?.length}{" "}
-        </div>
-        <div>
-          <AutoAwesomeIcon /> {deck.commands?.length}{" "}
-        </div>
-      </div>
+      <DeckStats
+        deck={deck}
+        getTotalCP={getTotalCP}
+        getTotalCPUsed={getTotalCPUsed}
+      />
 
       <h3 className="editor-section-header">
         <PersonIcon /> Champions
@@ -111,23 +114,7 @@ export function DeckEditor() {
       <h3 className="editor-section-header">
         <DiamondIcon /> Accessories
       </h3>
-      <div className="card-view">
-        <EditorChampCard
-          card={deck.accessories?.[0]}
-          onClickFn={onButtonClick}
-          listKey="acc"
-        />
-        <EditorChampCard
-          card={deck.accessories?.[1]}
-          onClickFn={onButtonClick}
-          listKey="acc"
-        />
-        <EditorChampCard
-          card={deck.accessories?.[2]}
-          onClickFn={onButtonClick}
-          listKey="acc"
-        />
-      </div>
+      <AccessoryPreviewBlock deck={deck} onButtonClick={onButtonClick} />
 
       <h3 className="editor-section-header">
         <AutoAwesomeIcon /> Commands
@@ -150,11 +137,13 @@ export function DeckEditor() {
             <ChampCardBlock deck={deck} onButtonClick={() => {}} />
           )}
           {cardType === "com" && <CommandPreviewBlock deck={deck} />}
+          {cardType === "acc" && <AccessoryPreviewBlock deck={deck} />}
           <hr />
           {cardType === "com" ? (
             <CommandSetList
               cards={optionsFromCollection}
               onClickFn={tryAddToDeck}
+              rules={rules}
             />
           ) : (
             <>
@@ -164,6 +153,11 @@ export function DeckEditor() {
                   card={card}
                   onClickFn={tryAddToDeck}
                   listKey={card.atr === "acc" ? "acc" : "champ"}
+                  disabled={
+                    card.atr === "acc"
+                      ? !rules.validateAccCard(card)
+                      : !rules.validateChampCard(card)
+                  }
                 />
               ))}
             </>

@@ -51,13 +51,39 @@ export const useDeckEditor = (deckId) => {
     return total;
   };
 
+  const validateChampCard = (card) => {
+    const isDuplicate = deck.champions.find((champ) => champ.id === card.id);
+    const maxCapacity = deck.champions.length > 2;
+
+    return !(isDuplicate || maxCapacity);
+  };
+
+  const validateAccCard = (card) => {
+    const isOverCost = getTotalCPUsed() + card.CP > getTotalCP();
+    const isDuplicate = deck.accessories.find((acc) => acc.id === card.id);
+    const maxCapacity = deck.accessories.length > 2;
+
+    return !(isDuplicate || isOverCost || maxCapacity);
+  };
+
+  const validateComCard = (card) => {
+    const isOverCost = getTotalCPUsed() + card.val > getTotalCP();
+    const duplicates = deck.commands.filter(
+      (acc) => acc.id === card.id && acc.val === card.val
+    );
+    const isTooMany = duplicates.length > card.count - 1;
+    const maxCapacity = deck.commands.length >= 20;
+
+    return !(isOverCost || isTooMany || maxCapacity);
+  };
+
   const tryAddToDeck = (listKey, card, e = {}) => {
     e.preventDefault();
     switch (listKey) {
       case "com":
         setDeck((prev) => {
           console.log("com");
-          if (getTotalCPUsed() + card.value > getTotalCP()) {
+          if (!validateComCard(card)) {
             return prev;
           }
           prev.commands.push(card);
@@ -67,7 +93,7 @@ export const useDeckEditor = (deckId) => {
       case "champ":
         setDeck((prev) => {
           console.log("Champ", prev);
-          if (prev.champions.length > 2) return prev;
+          if (!validateChampCard(card)) return prev;
           prev.champions.push(card);
           return { ...prev };
         });
@@ -75,10 +101,7 @@ export const useDeckEditor = (deckId) => {
       case "acc":
         setDeck((prev) => {
           console.log("acc");
-          if (
-            prev.accessories.length > 2 ||
-            getTotalCPUsed() + card.CP > getTotalCP()
-          ) {
+          if (!validateAccCard(card)) {
             return prev;
           }
           prev.accessories.push(card);
@@ -97,5 +120,10 @@ export const useDeckEditor = (deckId) => {
     getTotalCP,
     tryAddToDeck,
     getTotalCPUsed,
+    rules: {
+      validateChampCard,
+      validateAccCard,
+      validateComCard,
+    },
   };
 };
