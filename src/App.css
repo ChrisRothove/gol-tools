@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   gap: 8px;
   margin: auto;
-  margin-bottom: 18px;
+  padding: 18px;
 }
 .content-horizontal hr {
   width: 100%;
@@ -25,6 +25,9 @@ body {
   text-indent: 12px;
   text-decoration: underline;
   font-family: Orbitron, sans-serif;
+}
+.content-top {
+  margin-top: 8px;
 }
 .listItem {
   background-color: #9932cc9d;
@@ -60,6 +63,7 @@ body {
 }
 .page-title {
   font-family: Orbitron, sans-serif;
+  color: #FFF;
 }
 .action-button-bar {
   display: flex;
@@ -85,11 +89,120 @@ body {
   color: #FFF;
 }
 
+.header-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.header-content h1 {
+  margin: 0px;
+  padding: 0;
+  font-size: 2rem;
+}
+
+.header-content h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.header-content button {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0;
+  color: #FFF;
+  transition: none;
+}
+
+.header-content button:focus {
+  outline: none;
+}
+
+.login-toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 1;
+  margin-bottom: 1rem;
+}
+
+.page-title-off {
+  color: #9932cc9d;
+}
+
+.login-input {
+  background-color: #9932cc9d;
+  border: 1px solid #fff;
+  color: #fff;
+  flex-grow: 1;
+  padding: .5rem;
+}
+
+.error-text {
+  color: rgb(253, 129, 129);
+  font-weight: 300;
+  font-size: .8rem;
+  text-align: center;
+}
+/*User Attributes */
+.header-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-with-value {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.content-horizontal .MuiSvgIcon-root {
+  color:#FFF;
+}
+
+.user-details-container {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 8px;
+}
+
+.user-details-container .settings-block {
+  margin-left: 16px;
+}
+
+.info-button {
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  margin: 0px 8px;
+}
+
+.info-button:hover, .info-button:active, .info-button:focus {
+  background-color: #9932cc2d;
+  outline: none;
+}
+
 .MuiDrawer-modal {
   background-color: #9932cc9d;
 }
 
 .MuiDrawer-paper {
   background-image: url("/public/assets/sinnerBG.png");
-  width: 80vw;
+  width: 80%;
+}
+
+.MuiAppBar-colorPrimary {
+  background-color: #9932cc9d !important;
 }

@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { useCollectionsLS } from "./useCollectionsLS";
+import { useContext, useState } from "react";
+import { LoginContext } from "../contexts/LoginContext";
+import { getFullCardDetails } from "../../utils/getFullCardDetails";
 
 export const useCardListDrawer = () => {
-  const { myCollection } = useCollectionsLS();
+  const { loginData } = useContext(LoginContext);
+  const myCollection = getFullCardDetails(loginData.collection);
 
-  const [selectedCard, setSelectedCard] = useState(null);
   const [optionsFromCollection, setCardOptions] = useState(
     myCollection.champions
   );
   const [isOpen, setIsOpen] = useState(false);
   const [cardType, setCardType] = useState("champ");
 
-  const onButtonClick = (cardType, card) => {
-    if (card) setSelectedCard(card);
+  const onButtonClick = (cardType) => {
     switch (cardType) {
       case "champ":
         setCardOptions(myCollection.champions);
@@ -32,12 +32,10 @@ export const useCardListDrawer = () => {
   };
 
   const onClose = () => {
-    setSelectedCard(null);
     setIsOpen(false);
   };
 
   return {
-    selectedCard,
     onButtonClick,
     isOpen,
     onClose,

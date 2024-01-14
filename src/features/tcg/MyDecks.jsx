@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router";
-import { useDecksLS } from "../hooks/useDecksLS";
 import { NavNoActions } from "../navigation/navNoActions";
+import { useContext } from "react";
+import { LoginContext } from "../contexts/LoginContext";
 
 export function MyDecks() {
-  const { decks } = useDecksLS();
+  const {
+    loginData: { decks },
+  } = useContext(LoginContext);
+
   const navigate = useNavigate();
 
   return (

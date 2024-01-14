@@ -1,12 +1,9 @@
 import { useParams } from "react-router";
-import { useDecksLS } from "../hooks/useDecksLS";
-import { useState } from "react";
 import { ChampCard, ComCard } from "./CardList";
 import { NavNoActions } from "../navigation/navNoActions";
 import PersonIcon from "@mui/icons-material/Person";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import StyleIcon from "@mui/icons-material/Style";
 import { useDeckEditor } from "../hooks/useDeckEditor";
 import { useCardListDrawer } from "../hooks/useCardListDrawer";
 import { Drawer } from "@mui/material";
@@ -47,7 +44,7 @@ export const EditorComCard = ({
   </button>
 );
 
-const ChampCardBlock = ({ onButtonClick, deck = {} }) => (
+export const ChampCardBlock = ({ onButtonClick, deck = {} }) => (
   <div className="card-view">
     <EditorChampCard
       card={{ ...deck.champions?.[0], count: 1 }}
@@ -78,14 +75,8 @@ export function DeckEditor() {
     tryDeleteFromDeck,
   } = useDeckEditor(deckId);
 
-  const {
-    selectedCard,
-    onButtonClick,
-    isOpen,
-    onClose,
-    cardType,
-    optionsFromCollection,
-  } = useCardListDrawer();
+  const { onButtonClick, isOpen, onClose, cardType, optionsFromCollection } =
+    useCardListDrawer();
 
   return (
     <div className="content-hoizontal">

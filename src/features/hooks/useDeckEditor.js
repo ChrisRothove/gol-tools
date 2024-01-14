@@ -1,17 +1,11 @@
-import { useDecksLS } from "./useDecksLS";
+import { getFullCardDetails } from "../../utils/getFullCardDetails";
+import { useDecks } from "./useDecks";
 import { useState } from "react";
 
 export const useDeckEditor = (deckId) => {
-  const { decks, addDeck, updateDeck } = useDecksLS();
-
-  const currentDeck = decks.filter((deck) => deck.id === deckId)?.[0] ?? {
-    name: "New Deck",
-    champions: [],
-    accessories: [],
-    commands: [],
-  };
-
-  const [deck, setDeck] = useState(currentDeck);
+  const { currentDeck, addDeck, updateDeck } = useDecks(deckId);
+  // TODO: Deck build based on shorthand objects instead of full card objs
+  const [deck, setDeck] = useState(getFullCardDetails(currentDeck));
 
   const setName = (e) =>
     setDeck((prev) => {

@@ -19,3 +19,21 @@ export const collapseCommandsByValue = (cards) => {
 
   return commandSets;
 };
+
+export const collapseCommandsToCollection = (cards) => {
+  const result = [];
+  cards.forEach((card) => {
+    const { val, id } = card;
+
+    const exitingEntry = result.filter(
+      (card) => card.id === id && card.val === val
+    )[0];
+    if (!exitingEntry) {
+      result.push({ ...card, count: 1 });
+    } else {
+      exitingEntry.count += 1;
+    }
+  });
+  console.log(result);
+  return result;
+};

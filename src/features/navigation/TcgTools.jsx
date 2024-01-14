@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router";
 import { BasePage } from "../BasePage";
+import { useContext } from "react";
+import { LoginContext } from "../contexts/LoginContext";
+import { TcgStarter } from "../tcg/TcgStarter";
 
 export function TcgTools() {
   const navigate = useNavigate();
+  const { getIsPlayer } = useContext(LoginContext);
 
   const pageDetails = {
     title: "Mirage Masters",
@@ -20,15 +24,19 @@ export function TcgTools() {
         onClickFn: () => navigate("/mirage-masters/collection"),
       },
       {
-        label: "⚒️ My Decks",
+        label: "My Decks",
         onClickFn: () => navigate("/mirage-masters/decks"),
       },
       {
         label: "⚒️ Buy Packs",
         onClickFn: () => navigate("/mirage-masters/packs"),
       },
+      {
+        label: "Players",
+        onClickFn: () => navigate("/mirage-masters/players"),
+      },
     ],
   };
 
-  return <BasePage {...pageDetails} />;
+  return getIsPlayer() ? <BasePage {...pageDetails} /> : <TcgStarter />;
 }
