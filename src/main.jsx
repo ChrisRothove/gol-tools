@@ -20,6 +20,10 @@ import { PlayerList } from "./features/tcg/PlayerList.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LoginProvider } from "./features/contexts/LoginContext.jsx";
 import { DeckPreview } from "./features/tcg/DeckPreview.jsx";
+import { DndTools } from "./features/navigation/DndTools.jsx";
+import { CsTools } from "./features/navigation/CsTools.jsx";
+import BasicRules from "./features/command-system/rules/BasicRules.jsx";
+import RuleDocs from "./features/command-system/rules/RuleDocs.jsx";
 
 export const Layout = () => (
   <LoginProvider>
@@ -37,22 +41,41 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <NotFound />,
       },
+      // DnD Routes
       {
-        path: "/lists",
+        path: "/dungeons-and-darkness",
+        element: <DndTools />,
+      },
+      {
+        path: "/dungeons-and-darkness/lists",
         element: <AllLists />,
       },
       {
-        path: "/lists/:listKey",
+        path: "/dungeons-and-darkness/lists/:listKey",
         element: <ListRouter />,
       },
       {
-        path: "/dm-tools",
+        path: "/dungeons-and-darkness/dm-tools",
         element: <DmTools />,
       },
       {
-        path: "/dm-tools/mirage-cache",
+        path: "/dungeons-and-darkness/dm-tools/mirage-cache",
         element: <MirageCache />,
       },
+      // Command System Routes
+      {
+        path: "/command-system",
+        element: <CsTools />,
+      },
+      {
+        path: "/command-system/rules",
+        element: <RuleDocs />,
+      },
+      {
+        path: "/command-system/rules/basic-rules",
+        element: <BasicRules />,
+      },
+      // Mirage Masters Routes
       {
         path: "/mirage-masters",
         element: <TcgTools />,

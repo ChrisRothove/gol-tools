@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router";
+import { CopyRouter } from "./command-system/CopyRouter";
 
 export function BasePage({
   title = "",
   buttonList = [],
+  copy = [],
   subtext = "",
   backButton = true,
 }) {
@@ -21,6 +23,9 @@ export function BasePage({
             </button>
           </div>
         )}
+        {copy.map((item) => (
+          <CopyRouter key={item} copy={item} />
+        ))}
         {buttonList.map((btn) => {
           return (
             <button key={btn.label} onClick={btn.onClickFn}>
